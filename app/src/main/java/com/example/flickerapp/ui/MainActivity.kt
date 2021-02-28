@@ -1,17 +1,12 @@
-package com.example.flickerapp
+package com.example.flickerapp.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.flickerapp.R
 import com.example.flickerapp.databinding.ActivityMainBinding
 import com.example.flickerapp.viewModel.FlickerViewModel
 
@@ -35,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.home -> {
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
                    val transaction=supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.fragmentContainer,HomeFragment())
+                    transaction.replace(R.id.fragmentContainer, HomeFragment())
                     transaction.commit()
                 }
             }

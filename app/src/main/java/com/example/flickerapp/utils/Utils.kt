@@ -1,4 +1,4 @@
-package com.example.flickerapp
+package com.example.flickerapp.utils
 
 object Utils {
     const val API_KEY="6f102c62f41998d151e5a1b48713cf13"

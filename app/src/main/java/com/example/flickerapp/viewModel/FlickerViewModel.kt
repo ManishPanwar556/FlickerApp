@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.flickerapp.Utils
+import com.example.flickerapp.utils.Utils
 import com.example.flickerapp.repository.FlickrRepository
 import com.example.flickerapp.retrofit.Photo
 import kotlinx.coroutines.Dispatchers
@@ -24,7 +24,7 @@ class FlickerViewModel
     }
     private fun updateLiveData() {
         viewModelScope.launch(Dispatchers.IO) {
-            val res = repository.getResponse(Utils.EXTRAS,Utils.API_KEY,Utils.METHOD)
+            val res = repository.getResponse(Utils.EXTRAS, Utils.API_KEY, Utils.METHOD)
             if (res.isSuccessful) {
                 res.body()?.let {
                     _response.postValue(it.photos.photo)

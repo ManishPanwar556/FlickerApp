@@ -1,10 +1,11 @@
-package com.example.flickerapp
+package com.example.flickerapp.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.flickerapp.R
 import com.example.flickerapp.databinding.FlickrItemBinding
 import com.example.flickerapp.retrofit.Photo
 

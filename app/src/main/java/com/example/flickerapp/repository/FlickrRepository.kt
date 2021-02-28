@@ -1,6 +1,6 @@
 package com.example.flickerapp.repository
 
-import com.example.flickerapp.Utils
+import com.example.flickerapp.utils.Utils
 import com.example.flickerapp.retrofit.FlickerApiInterface
 import com.example.flickerapp.retrofit.FlickerResponse
 import com.google.gson.Gson

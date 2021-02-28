@@ -1,4 +1,4 @@
-package com.example.flickerapp
+package com.example.flickerapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
         viewModel=ViewModelProvider(this).get(FlickerViewModel::class.java)
         viewModel.response.observe(viewLifecycleOwner, Observer {
             binding.progressBar.visibility=View.GONE
-            rev.adapter=MyRecyclerAdapter(it)
+            rev.adapter= MyRecyclerAdapter(it)
             rev.layoutManager=LinearLayoutManager(requireContext())
         })
         return binding.root
