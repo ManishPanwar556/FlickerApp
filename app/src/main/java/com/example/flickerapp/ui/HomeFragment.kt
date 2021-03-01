@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flickerapp.databinding.FragmentHomeBinding
 import com.example.flickerapp.viewModel.FlickerViewModel
@@ -23,6 +24,7 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding=FragmentHomeBinding.inflate(inflater)
+        val snapHelper=LinearSnapHelper()
         rev=binding.rev
         viewModel=ViewModelProvider(this).get(FlickerViewModel::class.java)
         viewModel.response.observe(viewLifecycleOwner, Observer {
@@ -30,6 +32,7 @@ class HomeFragment : Fragment() {
             rev.adapter= MyRecyclerAdapter(it)
             rev.layoutManager=LinearLayoutManager(requireContext())
         })
+
         return binding.root
     }
 
