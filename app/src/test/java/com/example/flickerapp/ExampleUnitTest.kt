@@ -1,6 +1,7 @@
 package com.example.flickerapp
 
 import com.example.flickerapp.retrofit.FlickerApiInterface
+import com.example.flickerapp.utils.Utils
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.runBlocking
@@ -32,13 +33,20 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
+//    @Test
+//    fun testApi(){
+//        runBlocking {
+//            val res=retrofit.getImages("flickr.photos.getRecent","6f102c62f41998d151e5a1b48713cf13","json","1","url_s")
+//            assertNotNull(res.body()?.photos?.photo?.get(0)?.url_s)
+//        }
+//
+//    }
     @Test
-    fun testApi(){
-        runBlocking {
-            val res=retrofit.getImages("flickr.photos.getRecent","6f102c62f41998d151e5a1b48713cf13","json","1","url_s")
+    fun testSearch(){
+        runBlocking{
+           val res=retrofit.getSearchResult(page="1",method=Utils.SEARCH_METHOD,api=Utils.API_KEY,json="json",value="1",extras = Utils.EXTRAS,text="Cat")
             assertNotNull(res.body()?.photos?.photo?.get(0)?.url_s)
         }
-
     }
 
 

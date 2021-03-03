@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/homeRootView"
     tools:context=".ui.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -14,5 +15,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
         android:layout_gravity="center"/>
-
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/loadingProgressBar"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:layout_gravity="bottom|center"/>
 </FrameLayout>

@@ -5,4 +5,5 @@ object Utils {
     const val METHOD="flickr.photos.getRecent"
     const val URL="https://api.flickr.com/services/"
     const val EXTRAS="url_s"
+    const val SEARCH_METHOD="flickr.photos.search"
 }

@@ -29,8 +29,14 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.home -> {
                     binding.drawerLayout.closeDrawer(GravityCompat.START)
-                   val transaction=supportFragmentManager.beginTransaction()
+                    val transaction = supportFragmentManager.beginTransaction()
                     transaction.replace(R.id.fragmentContainer, HomeFragment())
+                    transaction.commit()
+                }
+                R.id.search -> {
+                    binding.drawerLayout.closeDrawer(GravityCompat.START)
+                    val transaction = supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.fragmentContainer, SearchFragment())
                     transaction.commit()
                 }
             }
